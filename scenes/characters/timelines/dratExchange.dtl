@@ -1,0 +1,9 @@
+join drat 1
+drat: Thank you! I'll never forget-
+drat: oh.
+drat: Is that a blue cheese you have in your hands?
+drat: I'd be careful with that. My brother Dratzy is one of the missing people in this town, and the last cheese he ate was blue.
+drat: I hope he's okay... Anyways, here's a gold coin, for your service.
+join coin 2
+leave coin
+drat: Stay safe.

@@ -1,0 +1,15 @@
+join kendratLamar 1
+kendratLamar: Hey! I've got whatever you need. What can I get for ya?
+leave kendratLamar
+*grumble* *grumble*
+- got any cheese?
+	join detective 1
+	detective: Hmm... I'm a bit hungry. Do you have any cheese around here?
+	leave detective
+	join kendratLamar 1
+	kendratLamar: Hmm... I'm not sure about that.
+	kendratLamar: Our food supply somehow keeps reducing. I have one piece of cheese left, but no one wants to buy it.
+	kendratLamar: It's blue cheese. Rumors are going around, ya know? That blue cheese turns you evil.
+	kendratLamar: If ya want it, ya can have it.
+	kendratLamar: In exchange for one gold coin, of course.
+

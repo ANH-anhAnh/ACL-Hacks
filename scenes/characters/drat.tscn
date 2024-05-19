@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cystr0tjdsjwj"]
+
+[ext_resource type="Script" path="res://scenes/characters/drat.gd" id="1_33emd"]
+[ext_resource type="Texture2D" uid="uid://c3bad13nnpggm" path="res://graphics/characters/dratCryingIdle.PNG" id="2_qwrh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgwi"]
+size = Vector2(115, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0rvna"]
+polygon = PackedVector2Array(-51, 52, -31, 49, -8, 60, 9, 60, 27, 53, 42, 52, 61, 51, 88, 52, 102, 61, 103, 81, 51, 62, -3, 68, -36, 65, -46, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st8h6"]
+radius = 160.078
+
+[node name="Drat" type="CharacterBody2D"]
+script = ExtResource("1_33emd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(22.5, -18)
+scale = Vector2(0.77, 0.713333)
+texture = ExtResource("2_qwrh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_ulgwi")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_0rvna")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_st8h6")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

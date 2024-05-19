@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "gloves",
+"description": "",
+"display_name": "boxingGloves",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"gloves": {
+"export_overrides": {
+"image": "\"res://graphics/items/boxingGloves.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -200),
+"scale": 0.6,
+"scene": ""
+}
+},
+"scale": 1.0
+}

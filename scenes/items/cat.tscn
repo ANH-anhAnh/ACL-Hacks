@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtfruw7kb704n"]
+
+[ext_resource type="Script" path="res://scenes/items/cat.gd" id="1_2i5g0"]
+[ext_resource type="Texture2D" uid="uid://dj33r2mur223c" path="res://graphics/items/cat.png" id="1_ffg7x"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gohvx"]
+polygon = PackedVector2Array(-37, 18, 37, 18, 41, 30, 21, 38, -29, 34, -36, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smdan"]
+radius = 24.0832
+
+[node name="cat" type="CharacterBody2D"]
+script = ExtResource("1_2i5g0")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(6, -14)
+scale = Vector2(0.36, 0.45)
+texture = ExtResource("1_ffg7x")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -1)
+occluder = SubResource("OccluderPolygon2D_gohvx")
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+shape = SubResource("CircleShape2D_smdan")
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

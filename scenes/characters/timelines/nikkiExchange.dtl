@@ -1,0 +1,11 @@
+join characDialogue/nikkiRatmaj 1
+characDialogue/nikkiRatmaj: Ya know, they all think I'm crazy. But I've been in these streets for longer than them...
+characDialogue/nikkiRatmaj: I've seen things they've never seen before.
+- What do you mean?
+	characDialogue/nikkiRatmaj: A man comes here every night. He must've eaten someting foul- he was plagued by the famine.
+	characDialogue/nikkiRatmaj: One by one, he ate Ratizens and their food supply. He knew we couldn't save ourselves
+	- Tell me more.
+		characDialogue/nikkiRatmaj: But you're not from here. You can save us.
+		characDialogue/nikkiRatmaj: I've seen him spit blue bullets, fragments of evil he consumed.
+		characDialogue/nikkiRatmaj: Make sure they don't hit you. Dodge by moving around. Landing a hit on him will do the trick. Just get close and press E.
+		characDialogue/nikkiRatmaj: NOW SAVE THIS TOWN!

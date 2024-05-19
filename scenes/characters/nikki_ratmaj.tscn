@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxxxeei6e26dy"]
+
+[ext_resource type="Script" path="res://scenes/characters/nikki_ratmaj.gd" id="1_pjpmx"]
+[ext_resource type="Texture2D" uid="uid://cp4g6l6jjr175" path="res://graphics/characters/nikkiIdie.PNG" id="2_gubck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_637n4"]
+size = Vector2(75, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l2b3d"]
+polygon = PackedVector2Array(-47, 40, -31, 49, 25, 49, 36, 43, 39, 47, 96, 42, 117, 42, 119, 48, 114, 57, 78, 66, -3, 68, -36, 65, -46, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67n00"]
+radius = 160.078
+
+[node name="NikkRatmaj" type="CharacterBody2D"]
+script = ExtResource("1_pjpmx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31.25, -14.125)
+scale = Vector2(0.578333, 0.645833)
+texture = ExtResource("2_gubck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_637n4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l2b3d")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_67n00")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

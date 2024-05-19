@@ -1,0 +1,6 @@
+join kendratLamar 1
+kendratLamar: Here's ya cheese! I hope this coin isn't from Drat...
+join blueCheese 2
+[wait time="1.5"]
+leave blueCheese
+kendratLamar: NOW SCRAM!

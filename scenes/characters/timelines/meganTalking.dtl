@@ -1,0 +1,13 @@
+join meganTheeRat 1
+meganTheeRat: Hey there, you! Yeah, you!
+meganTheeRat: Are you new here? Let me strike a deal with you.
+leave meganTheeRat
+- Okay.
+	join detective 1
+	detective: Sure. What is it?
+	leave detective
+join meganTheeRat 1
+meganTheeRat: I see you don't have any gear on you.
+meganTheeRat: I'll tell you what, if you can find my black cat, I can give you something to defend yourself.
+meganTheeRat: With the amount of disappearances nowadays, trust me, you'll need it.
+

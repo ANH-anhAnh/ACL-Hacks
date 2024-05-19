@@ -1,0 +1,18 @@
+join drat 1
+drat: *Sob* *Sob*
+drat: Have you seen my daughter?
+drat: Please help me... there have been strange disappearances recently... I can't lose my daughter...
+drat: I'll give you anything if you find her!
+drat: ANYTHING!
+leave drat
+- yes of course!
+	join detective 1
+	detective: I'll do my best, sir.
+	leave detective
+- no.
+	join detective 1
+	detective: It's her fault she got lost anyway. Survival of the fittest...
+	leave detective
+	join drat 1
+	drat: *SOB* *SOB* *SOB*
+

@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxlyxi2q0drwq"]
+
+[ext_resource type="Script" path="res://scenes/characters/detective.gd" id="1_ii2u5"]
+[ext_resource type="Texture2D" uid="uid://b880x8lnnoiw5" path="res://graphics/characters/idle.PNG" id="1_rb8te"]
+[ext_resource type="Texture2D" uid="uid://c0u4sremns7sf" path="res://graphics/characters/run1.PNG" id="2_psel5"]
+[ext_resource type="Texture2D" uid="uid://dg7stonv16bfn" path="res://graphics/characters/run2.PNG" id="3_6e7o4"]
+[ext_resource type="Texture2D" uid="uid://bmh6thc066o46" path="res://graphics/characters/run3.PNG" id="4_jcaxp"]
+[ext_resource type="Texture2D" uid="uid://bxwg8sg3mi6aj" path="res://graphics/characters/run4.PNG" id="5_380ln"]
+[ext_resource type="Texture2D" uid="uid://c4yflicm00d0h" path="res://graphics/characters/run5.PNG" id="6_8kmlb"]
+[ext_resource type="Texture2D" uid="uid://df67c2pydyfbd" path="res://graphics/characters/run6.PNG" id="7_a823a"]
+[ext_resource type="Texture2D" uid="uid://cyru36hepbhng" path="res://graphics/characters/run7.PNG" id="8_818hk"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_me12u"]
+polygon = PackedVector2Array(-34, 72, -7, 66, 18, 66, 51, 71, 61, 80, 56, 91, 29, 98, -4, 98, -36, 91, -40, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjk8"]
+size = Vector2(100, 61.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp8m0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rb8te")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_psel5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6e7o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jcaxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_380ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8kmlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a823a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_818hk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="Detective" type="CharacterBody2D"]
+script = ExtResource("1_ii2u5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -8)
+occluder = SubResource("OccluderPolygon2D_me12u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 38.75)
+shape = SubResource("RectangleShape2D_xmjk8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cp8m0")
+animation = &"idle"

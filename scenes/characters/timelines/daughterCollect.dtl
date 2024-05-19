@@ -1,0 +1,7 @@
+join daughter 2
+[wait time="1.5"]
+leave daughter
+*You feel something appear in your pocket
+join blueCheese 2
+[wait time="1.5"]
+leave blueCheese

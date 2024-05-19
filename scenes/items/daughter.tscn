@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://y5h8piuw1dgy"]
+
+[ext_resource type="Script" path="res://daughter.gd" id="1_urcpc"]
+[ext_resource type="Texture2D" uid="uid://bytjbyqqp0hdu" path="res://graphics/items/daughterIdle.PNG" id="2_fb53y"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4mfx2"]
+polygon = PackedVector2Array(-37, 18, -29, 21, -13, 16, 1, 20, 20, 18, 37, 18, 41, 30, 21, 38, -29, 34, -36, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x08h"]
+radius = 17.0
+height = 58.0
+
+[node name="daughter" type="CharacterBody2D"]
+script = ExtResource("1_urcpc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -37)
+scale = Vector2(0.484167, 0.4775)
+texture = ExtResource("2_fb53y")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(12, -8)
+occluder = SubResource("OccluderPolygon2D_4mfx2")
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+position = Vector2(-1, -19)
+shape = SubResource("CapsuleShape2D_5x08h")
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]

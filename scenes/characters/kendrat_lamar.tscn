@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0fnh0365ovn7"]
+
+[ext_resource type="Script" path="res://scenes/characters/kendrat_lamar.gd" id="1_iskjl"]
+[ext_resource type="Texture2D" uid="uid://lxpnia64oqd8" path="res://graphics/characters/kendratIdle.PNG" id="2_q5h0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ospnw"]
+size = Vector2(75, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_otvu2"]
+polygon = PackedVector2Array(-48, 46, -31, 49, -7, 41, 25, 49, 38, 46, 50, 43, 50, 61, -3, 68, -36, 65, -46, 57, -59, 69, -65, 85, -75, 83, -83, 71, -78, 61, -70, 52)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33rkc"]
+radius = 160.078
+
+[node name="KendratLamar" type="CharacterBody2D"]
+script = ExtResource("1_iskjl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-20.5, -18)
+scale = Vector2(0.77, 0.713333)
+texture = ExtResource("2_q5h0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_ospnw")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_otvu2")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_33rkc")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]

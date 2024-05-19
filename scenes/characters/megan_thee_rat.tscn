@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://diity06mp7jfv"]
+
+[ext_resource type="Script" path="res://scenes/characters/megan_thee_rat.gd" id="1_uxv4s"]
+[ext_resource type="Texture2D" uid="uid://4gaxm3e0af13" path="res://graphics/characters/meganIdle.PNG" id="2_o1cr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nltva"]
+size = Vector2(115, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_er0c7"]
+polygon = PackedVector2Array(-51, 52, -31, 49, -3, 40, 17, 43, 27, 53, 42, 52, 61, 51, 88, 52, 102, 61, 103, 81, 51, 62, -3, 68, -36, 65, -46, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exyha"]
+radius = 160.078
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tvj0"]
+size = Vector2(75, 34)
+
+[node name="MeganTheeRat" type="CharacterBody2D"]
+script = ExtResource("1_uxv4s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(22.5, -18)
+scale = Vector2(0.77, 0.713333)
+texture = ExtResource("2_o1cr8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_nltva")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_er0c7")
+
+[node name="chatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_exyha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetection"]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_2tvj0")
+
+[connection signal="body_entered" from="chatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chatDetection" to="." method="_on_chat_detection_body_exited"]
